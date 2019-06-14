@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>Books</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -12,6 +12,28 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Browser Template</h1>
+      <h1>Books by JADA</h1>
+      <section>
+          <h2>Get All Books</h2>
+          <button id="books-index">Get All Books</button>
+          <h2>Get A Book</h2>
+          <form id="books-show">
+            <input required type="number" min="0" name="book[id]" placeholder="Book ID Here">
+            <button type="submit">Get Book</button>
+          </form>
+          <h2>Create One Book</h2>
+         <form id="books-create">
+           <input required type="text" name="book[title]" placeholder="Book Title Here">
+           <input required type="text" name="book[author]" placeholder="Book Author Here">
+           <button type="submit">Create Book</button>
+         </form>
+         <h2>Update One Book</h2>
+          <form id="books-update">
+            <input required type="number" name="book[id]" id="book-id-update" placeholder="Book ID Here">
+            <input required type="text" name="book[title]" placeholder="Book Title Here">
+            <input required type="text" name="book[author]" placeholder="Book Author Here">
+            <button type="submit">Update Book</button>
+          </form>
+       </section>
     </body>
 </html>
