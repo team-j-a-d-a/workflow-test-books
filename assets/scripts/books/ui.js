@@ -43,52 +43,6 @@ const onShowSuccess = function (responseData) {
   $('form').trigger('reset')
 }
 
-const onDestroySuccess = function () {
-  // add success message to our delete-book-message element
-  $('#delete-book-message').html('Book successfully deleted!')
-
-  // empty out the book-display element in case it was displaying information
-  // about the book we just deleted, replace with a message for the user to get
-  // all the books again.
-  $('#book-display').html('Books have changed! Click "Get All Books" again to see all the books')
-
-  // add class for success messaging
-  $('#delete-book-message').addClass('success')
-
-  // use setTimeout to allow the success message to stay for 5 seconds before
-  // the message is replaced with '' and the 'success' class is removed
-  setTimeout(() => {
-    $('#delete-book-message').html('')
-    $('#delete-book-message').removeClass('success')
-  }, 5000)
-
-  // reset all forms
-  $('form').trigger('reset')
-}
-
-const onUpdateSuccess = function (responseData) {
-  // add success message to our update-book-message element
-  $('#update-book-message').html('You successfully updated the book')
-
-  // empty out the book-display element in case it was displaying information
-  // about the book we just updated, replace with a message for the user to get
-  // all the books again.
-  $('#book-display').html('Books have changed! Click "Get All Books" again to see all the books.')
-
-  // add class for success messaging
-  $('#update-book-message').addClass('success')
-
-  // use setTimeout to allow the success message to stay for 5 seconds before
-  // the message is replaced with '' and the 'success' class is removed
-  setTimeout(() => {
-    $('#update-book-message').html('')
-    $('#update-book-message').removeClass('success')
-  }, 5000)
-
-  // reset all forms
-  $('form').trigger('reset')
-}
-
 const onCreateSuccess = function () {
   // add success message to content
   $('#create-book-message').html('You created a new book!')
@@ -142,8 +96,6 @@ const onError = function (err) {
 module.exports = {
   onIndexSuccess,
   onShowSuccess,
-  onDestroySuccess,
-  onUpdateSuccess,
   onCreateSuccess,
   onError
 }
